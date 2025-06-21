@@ -34,6 +34,22 @@ $ checksec maze
 
 ---
 
+## Static Analysis (IDA Pro)
+
+Opening the binary in IDA Pro reveals the vulnerable logic in the main game loop.
+
+### Vulnerable Code Fragment
+
+The key logic is found in the part of the code that handles user input for maze configuration:
+
+![Alt text](img/3.png)
+
+### Key Observations
+
+- The array `maze_escape[]` is written to using `[rsi + rax*4]` where `rsi` holds the base address and `rax` is derived from user input.
+- There is **no bounds check** on `rax`. A large value will index into memory beyond the buffer and into writable sections such as the GOT.
+- This confirms the **out-of-bounds write** that enables us to overwrite a GOT entry.
+
 ## Vulnerability Analysis
 
 The program allows the player to configure "coordinates" and "slot values" in the maze. Internally, the game logic uses a buffer called `maze_escape[]`, and inputs are used directly as indices without bounds checks.
