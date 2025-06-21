@@ -2,6 +2,11 @@
 
 ---
 
+## Exploit Demo
+
+This demo illustrates the exploit process:
+![Alt text](gif/aMAZEing.gif)
+
 ## Challenge Overview
 
 **aMAZEing** is a binary maze game challenge where logic, memory, and vulnerability exploitation come together. The objective is to escape the maze — not through solving it, but by exploiting a flaw in its internal logic.
@@ -164,7 +169,3 @@ A shell is spawned, granting access to the system and allowing flag retrieval.
 ```
 flag{l0st_1n_th3_4m4z3_w1th_r34l_sh3ll}
 ```
-
----
-
-Let me know if you'd like to generate a Markdown version, convert it to PDF, or integrate it into a CTF platform format.
