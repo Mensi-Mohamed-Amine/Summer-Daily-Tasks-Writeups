@@ -2,6 +2,6 @@
 
 ## TASKS + Writeups
 
-| Task Name | Difficulty Level | Link                            | Category     | Score | Author        |
-| --------- | ---------------- | ------------------------------- | ------------ | ----- | ------------- |
-| TASK1     | Easy             | [TASK1](./01%20TASK1/README.md) | Cryptography | 100   | Mohamed Hedda |
+| Task Name | Difficulty Level | Link                            | Category     | Score | Youtube Video                                              | Author        |
+| --------- | ---------------- | ------------------------------- | ------------ | ----- | ---------------------------------------------------------- | ------------- |
+| TASK1     | Easy             | [TASK1](./01%20TASK1/README.md) | Cryptography | 100   | [TASK1](https://www.youtube.com/watch?v=YwUur9Y-d7g&t=21s) | Mohamed Hedda |
