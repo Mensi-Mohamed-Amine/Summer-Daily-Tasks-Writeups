@@ -22,7 +22,7 @@ first step we will decode message.enc with `base64` tool
 
 now we will use the timestamp to get the decryption key
 
-![Alt text](img/6.png)
+![Alt text](img/6.jpg)
 
 And we got it
 
