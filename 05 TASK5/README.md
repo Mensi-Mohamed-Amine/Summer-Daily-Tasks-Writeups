@@ -115,7 +115,7 @@ xor_decrypt(input_file, output_file, key)
 
 ```
 
-and finally we got our flag
+after running this script we will get our decrypted_image.png and finally we got our flag
 
 ![Alt text](img/decrypted_image.png)
 
