@@ -11,4 +11,4 @@
 | TASK5     | Easy             | [TASK5](./05%20TASK5/README.md) | Reverse Engineering | 50    | [TASK5](https://www.youtube.com/watch?v=ye7Li4U9GSE&t=627s)                                          | Md Amine Mensi      |
 | TASK6     | Easy             | [TASK6](./06%20TASK6/README.md) | Digital Forensics   | 50    | [TASK6](https://www.youtube.com/watch?v=Qdi0fWiXtcI)                                                 | Mohamed Hedda       |
 | TASK7     | Easy             | [TASK7](./07%20TASK7/README.md) | Steganography       | 50    | [TASK7](https://www.youtube.com/watch?v=NcRURnMZFQ8)                                                 | Youssef Ben Youssef |
-| TASK8     | Easy             | [TASK8](./08%20TASK7/README.md) | Reverse Engineering | 50    | [TASK8]()                                                                                            | Youssef Ben Youssef |
+| TASK8     | Easy             | [TASK8](./08%20TASK8/README.md) | Reverse Engineering | 50    | [TASK8]()                                                                                            | Youssef Ben Youssef |
