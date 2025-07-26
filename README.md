@@ -10,4 +10,4 @@
 | TASK4     | Easy             | [TASK4](./04%20TASK4/README.md) | Steganography       | 50    | [TASK4](https://www.youtube.com/watch?v=DmaB2Tmv7i4&list=PLpWkNayvK98vC1P10yHmoDTiko1q0eqjX)         | Arwa Fessi          |
 | TASK5     | Easy             | [TASK5](./05%20TASK5/README.md) | Reverse Engineering | 50    | [TASK5](https://www.youtube.com/watch?v=ye7Li4U9GSE&t=627s)                                          | Md Amine Mensi      |
 | TASK6     | Easy             | [TASK6](./06%20TASK6/README.md) | Digital Forensics   | 50    | [TASK6](https://www.youtube.com/watch?v=Qdi0fWiXtcI)                                                 | Mohamed Hedda       |
-| TASK7     | Easy             | [TASK7](./07%20TASK7/README.md) | Steganography       | 50    | [TASK7]()                                                                                            | Youssef Ben Youssef |
+| TASK7     | Easy             | [TASK7](./07%20TASK7/README.md) | Steganography       | 50    | [TASK7](https://www.youtube.com/watch?v=NcRURnMZFQ8)                                                 | Youssef Ben Youssef |
