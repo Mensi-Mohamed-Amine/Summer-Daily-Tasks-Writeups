@@ -12,3 +12,4 @@
 | TASK6     | Medium           | [TASK6](./06%20TASK6/README.md) | Digital Forensics   | 50    | [TASK6](https://www.youtube.com/watch?v=Qdi0fWiXtcI)                                                 | Mohamed Hedda       |
 | TASK7     | Medium           | [TASK7](./07%20TASK7/README.md) | Steganography       | 50    | [TASK7](https://www.youtube.com/watch?v=NcRURnMZFQ8)                                                 | Youssef Ben Youssef |
 | TASK8     | Medium           | [TASK8](./08%20TASK8/README.md) | Reverse Engineering | 50    | [TASK8]()                                                                                            | Youssef Ben Youssef |
+| TASK9     | Medium           | [TASK9](./09%20TASK9/README.md) | Binary Exploitation | 50    | [TASK9]()                                                                                            | Youssef Ben Youssef |
